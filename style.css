@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Play&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Permanent Marker', cursive;
+  font-family: 'Play', sans-serif;
+  background: url('https://images.unsplash.com/photo-1586775490184-b79f0621891f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15rem;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+h1 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.container-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-size: large;
+  letter-spacing: 1px;
+  margin-right: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px 2px #303030;
+  transition: all 0.25s;
+  outline: none;
+  border: none;
+}
+
+button:hover {
+  background-color: #303030;
+  color: #fff;
+}
+
+button:active {
+  transform: translateY(5%);
+  box-shadow: 0px 1px 5px 2px #303030;
+}
