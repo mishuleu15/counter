@@ -1,30 +1,27 @@
-const numberCount = document.querySelector('h1');
-const decreaseBtn = document.getElementById('decrease');
-const resetBtn = document.getElementById('reset');
-const increaseBtn = document.getElementById('increase');
-
+// Set initial count
 let count = 0;
-numberCount.textContent = count;
-function decrease() {
-  if (count <= 0) {
-    numberCount.textContent = 0;
-    numberCount.style.color = 'black';
-  } else {
-    numberCount.textContent = --count;
-  }
-}
 
-function reset() {
-  count = 0;
-  numberCount.textContent = count;
-  numberCount.style.color = 'black';
-}
+// Select values and buttons
+const value = document.querySelector('#value');
+const btns = document.querySelectorAll('.btn');
 
-function increase() {
-  numberCount.textContent = ++count;
-  numberCount.style.color = 'green';
-}
-
-decreaseBtn.addEventListener('click', decrease);
-resetBtn.addEventListener('click', reset);
-increaseBtn.addEventListener('click', increase);
+btns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    const styles = e.currentTarget.classList;
+    if (styles.contains('increase')) {
+      count++;
+      value.style.color = 'green';
+    } else if (styles.contains('decrease')) {
+      if (count <= 0) {
+        value.textContent = 0;
+        value.style.color = 'black';
+      } else {
+        value.style.color = 'red';
+        count--;
+      }
+    } else {
+      count = 0;
+    }
+    value.textContent = count;
+  });
+});
